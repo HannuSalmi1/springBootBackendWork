@@ -19,7 +19,7 @@ import java.nio.file.Paths;
 
 @RestController
 public class UploadController {
-    public static String UPLOAD_DIRECTORY = "C:\\Users\\Omistaja\\Downloads\\demo\\src\\main\\resources\\uploads";
+    public static String UPLOAD_DIRECTORY = "C:\\Users\\Omistaja\\springBootProjects\\demo\\src\\main\\resources\\uploads";
     public String fileName;
     @PostMapping("/upload")
     public String uploadImage(Model model, @RequestParam("image") MultipartFile file) throws IOException {

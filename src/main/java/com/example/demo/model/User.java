@@ -1,6 +1,8 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import org.springframework.context.annotation.Bean;
+
 
 @Entity
 @Table(name = "Users")
