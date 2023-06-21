@@ -12,14 +12,18 @@ public class UrlCreator {
 
     private User user;
 
-/*not inserting String name to this. because i used getter in adding the user
-    name to the end of url. */
+    private String userUrl;
+
+
     public String creatingFolder(User user) throws IOException {
 
         Path path = Paths.get(
                 "C:\\Users\\Omistaja\\springBootProjects\\demo\\src\\main\\resources\\uploads\\"
                         + user.getName());
 
+        userUrl = path.toString();
+        user.setUrl(userUrl);
+        System.out.println(String.valueOf(path));
         try {
             Files.createDirectories(path);
         } catch (IOException e) {
