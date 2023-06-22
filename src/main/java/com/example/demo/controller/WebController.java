@@ -33,15 +33,16 @@ public class WebController {
 
 
     //user sign in
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value = "/SignIn", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> saveUser(@RequestBody User user, UrlCreator urlCreator) throws IOException {
+    public ResponseEntity<User> saveUser(@RequestBody User user, UrlCreator urlCreator) throws IOException {
 
         String name = user.getName();
         urlCreator.creatingFolder(user);
         userService.saveUser(user);
 
 
-        return ResponseEntity.ok("new user added to database");
+        return ResponseEntity.ok(user);
     }
 
 }

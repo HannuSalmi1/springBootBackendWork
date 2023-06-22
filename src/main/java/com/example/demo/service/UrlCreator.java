@@ -26,7 +26,7 @@ public class UrlCreator {
         user.setUrl(userUrl);
         System.out.println(String.valueOf(path));
         try {
-            //createDirectories checks if the file exists
+            //createDirectories checks if the file exists.
             Files.createDirectories(path);
         } catch (IOException e) {
             throw new RuntimeException(e);
