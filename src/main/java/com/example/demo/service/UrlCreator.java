@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.model.User;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class UrlCreator {
     private String userUrl;
 
 
-    public String creatingFolder(User user) throws IOException {
+    public void creatingFolder(User user) throws IOException {
 
         Path path = Paths.get(
                 "C:\\Users\\Omistaja\\springBootProjects\\demo\\src\\main\\resources\\uploads\\"
@@ -25,12 +26,15 @@ public class UrlCreator {
         user.setUrl(userUrl);
         System.out.println(String.valueOf(path));
         try {
+            //createDirectories checks if the file exists.
             Files.createDirectories(path);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        return "added a folder to user at ....";
+        System.out.println("new folder created");
+
+
 
     }
 
